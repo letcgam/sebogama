@@ -58,10 +58,10 @@ const links = [
 function Logo() {
   return (
     <div className="logo-block logo-official" aria-label="Logo oficial Sebo Gama">
-      <img src="/assets/img/logo/logo_square.png" alt="Logo Sebo Gama" className="logo-image" />
+      <img src="/assets/img/logo/icon.png" alt="Logo Sebo Gama" id="header-logo" />
       <div className="logo-copy">
-        <span className="logo-small">SEBO</span>
-        <span className="logo-large">GAMA</span>
+        <span className="logo-small">sebo</span>
+        <span className="logo-large">gama</span>
       </div>
     </div>
   );
@@ -69,22 +69,25 @@ function Logo() {
 
 function App() {
   return (
-    <div className="page-shell">
-      <div className="card">
-        <header className="hero">
-          <Logo />
-          <div className="hero-copy">
-            <p className="eyebrow">Link tree do sebo</p>
-            <h1>Sebo Gama</h1>
-            <p className="lead">
-              Navegue por contatos, redes e marketplaces do Sebo Gama em uma
-              página acolhedora e com cara de sebo. Tudo pensado para quem ama
-              livros usados, raridades e boas recomendações.
-            </p>
-          </div>
-        </header>
+    <div id="main-content">
+      <header className="header">
+        <Logo />
+      </header>
 
+      <div className="card">
+        Acervo de produtos culturais.
+      </div>
+
+      <div className="card">
+        <section id="contatos">
+          <h2>Contatos</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur optio dignissimos minus totam eveniet quod! Consectetur a ad et vero accusamus, repudiandae quis beatae in voluptates! Dolorum ipsa doloribus molestias.
+        </section>
+      </div>
+
+      <div className="card">
         <section className="links-grid" aria-label="Links principais do Sebo Gama">
+          <h2>Nosso acervo</h2>
           {links.map((link) => (
             <a key={link.label} href={link.href} className="link-card" target="_blank" rel="noreferrer noopener">
               <span className="link-logo" aria-hidden="true">
@@ -97,7 +100,9 @@ function App() {
             </a>
           ))}
         </section>
+      </div>
 
+      <div className="card">
         <section className="about-section">
           <div className="about-content">
             <h2>Sobre o Sebo Gama</h2>
@@ -113,14 +118,15 @@ function App() {
             </p>
           </div>
         </section>
-
-        <footer className="footer-note">
-          <p>
-            Feito para leitores, colecionadores e apreciadores de histórias bem
-            guardadas.
-          </p>
-        </footer>
       </div>
+
+      <footer className="footer-note">
+        <p>
+          Feito para leitores, colecionadores e apreciadores de histórias bem
+          guardadas.
+        </p>
+        <img src="/assets/img/logo/icon.png" alt="Logo Sebo Gama" id="footer-logo" />
+      </footer>
     </div>
   );
 }
