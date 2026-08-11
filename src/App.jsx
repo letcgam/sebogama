@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 const redesSociais = [
   {
     label: "WhatsApp",
@@ -13,7 +15,44 @@ const redesSociais = [
     description: "Acessar perfil",
     contato: "@sebogama",
   },
-]
+];
+
+const fotosSeboHorizontais = [
+  "h_DSC1452.jpg",
+  "h_DSC1485.jpg",
+  "h_DSC1490.jpg",
+  "h_DSC1509.jpg",
+  "h_DSC1517.jpg",
+  "h_DSC1520.jpg",
+  "h_DSC1525.jpg",
+  "h_DSC1538.jpg",
+  "h_DSC1660.jpg",
+];
+
+const fotosSeboVerticais = [
+  "v_DSC1435.jpg",
+  "v_DSC1444.jpg",
+  "v_DSC1462.jpg",
+  "v_DSC1522.jpg",
+  "v_DSC1523.jpg",
+  "v_DSC1524.jpg",
+  "v_DSC1530.jpg",
+  "v_DSC1536.jpg",
+  "v_DSC1566.jpg",
+  "v_DSC1584.jpg",
+  "v_DSC1594.jpg",
+  "v_DSC1620.jpg",
+  "v_DSC1697.jpg",
+  "v_DSC1714.jpg",
+  "v_DSC1717.jpg",
+  "v_DSC1480.jpg",
+  "v_DSC1487.jpg",
+  "v_DSC1488.jpg",
+  "v_DSC1494.jpg",
+  "v_DSC1500.jpg",
+  "v_DSC1507.jpg",
+  "v_DSC1518.jpg",
+];
 
 const links = [
   {
@@ -53,6 +92,87 @@ const links = [
     logo: "shopee.jpeg",
   },
 ];
+
+function ImageCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [shuffledFotos] = useState(() => {
+    const fotos = [...fotosSeboHorizontais];
+    for (let i = fotos.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [fotos[i], fotos[j]] = [fotos[j], fotos[i]];
+    }
+    return fotos;
+  });
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCurrentIndex((currentIndex) => (currentIndex + 1) % shuffledFotos.length);
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, [shuffledFotos.length]);
+
+  const prevSlide = () => {
+    setCurrentIndex((currentIndex) => (currentIndex + shuffledFotos.length - 1) % shuffledFotos.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((currentIndex) => (currentIndex + 1) % shuffledFotos.length);
+  };
+
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchMove = (event) => {
+    touchEndX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const delta = touchStartX.current - touchEndX.current;
+    if (Math.abs(delta) > 40) {
+      if (delta > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  return (
+    <div className="carousel">
+      <div
+        className="carousel-frame"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <img
+          src={"/assets/img/fotos_loja/" + shuffledFotos[currentIndex]}
+          alt={`Foto do Sebo Gama ${currentIndex + 1}`}
+          className="carousel-image"
+        />
+        <div className="carousel-caption">Fotos do sebo</div>
+      </div>
+      <div className="carousel-controls">
+        <button type="button" onClick={prevSlide} className="carousel-button" aria-label="Foto anterior">
+          &#8592;
+        </button>
+        <div className="carousel-indicator">
+          {`${currentIndex + 1}/${shuffledFotos.length}`}
+        </div>
+        <button type="button" onClick={nextSlide} className="carousel-button" aria-label="Próxima foto">
+          &#8594;
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -177,6 +297,8 @@ function App() {
           <p>Seja visitando nossa loja física em Campinas ou navegando no nosso site com entrega para todo o Brasil, nossa missão é conectar você a grandes histórias e memórias inesquecíveis.</p>
 
           <p><b>Garimpe nosso acervo e encontre seu próximo achado!</b></p>
+
+          <ImageCarousel/>
         </section>
       </div>
 
