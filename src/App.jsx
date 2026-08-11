@@ -61,8 +61,7 @@ function Logo() {
     <div className="logo-block logo-official" aria-label="Logo oficial Sebo Gama">
       <img src="/assets/img/logo/icon.png" alt="Logo Sebo Gama" id="header-logo" />
       <div className="logo-copy">
-        <span className="logo-small">sebo</span>
-        <span className="logo-large">gama</span>
+        <span className="text-emphasis">sebo</span>gama
       </div>
     </div>
   );

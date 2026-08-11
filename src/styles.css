@@ -111,8 +111,7 @@ img#header-logo {
     padding: 4px;
 }
 
-.logo-small,
-.logo-large {
+.logo-copy {
     font-size: 2rem;
     letter-spacing: -0.03em;
     font-weight: 900;
@@ -121,7 +120,7 @@ img#header-logo {
     color: var(--text);
 }
 
-.logo-small {
+.text-emphasis {
     color: var(--accent);
 }
 
