@@ -133,17 +133,6 @@ img#header-logo {
     background: #ffffff;
 }
 
-.header-copy {
-    display: grid;
-    gap: 12px;
-}
-
-h1 {
-    margin: 0;
-    font-size: clamp(2.4rem, 4vw, 3.8rem);
-    line-height: 0.95;
-}
-
 #links-redes-sociais {
     display: flex;
     gap: 8px;
@@ -166,13 +155,6 @@ h1 {
     height: 60px;
     padding: 10px;
     object-fit: contain;
-}
-
-.lead {
-    margin: 0;
-    max-width: 46rem;
-    color: var(--muted);
-    line-height: 1.78;
 }
 
 .links-grid {
@@ -204,16 +186,6 @@ h1 {
     transform: scale(1.04) translateY(-2px);
     border: var(--border-emphasis);
     box-shadow: var(--shadow);
-}
-
-.link-icon {
-    display: grid;
-    place-items: center;
-    width: 54px;
-    height: 54px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.06);
-    font-size: 1.4rem;
 }
 
 .link-label {
@@ -267,10 +239,6 @@ h1 {
 }
 
 @media (max-width: 520px) {
-    .page-shell {
-        padding: 24px 16px;
-    }
-
     .link-card {
         padding: 20px;
     }

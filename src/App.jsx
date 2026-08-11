@@ -70,7 +70,7 @@ function Logo() {
 function App() {
   return (
     <div id="main-content">
-      <header className="header">
+      <header>
         <Logo />
       </header>
 
