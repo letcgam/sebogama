@@ -161,18 +161,22 @@ function App() {
           <h2>Sobre o Sebo Gama</h2>
         </div>
         <section className="card-body">
-          <div>
-            <p>
-              Sebo Gama une o velho e o novo em Campinas: uma vitrine digital
-              com o aconchego de um sebo, atendimento direto e ofertas em
-              diversas plataformas.
-            </p>
-            <p>
-              Use esta página para acessar rapidamente os canais oficiais e
-              encontrar os melhores livros usados e edições especiais com o
-              carisma de um sebo de verdade.
-            </p>
-          </div>
+          <h3>Tradição, Leitura e Cultura Pop</h3>
+
+          <p>Desde 2002 em Campinas, o Sebo Gama é o destino certo para leitores, garimpadores e colecionadores. Unimos o fascínio dos sebos tradicionais ao universo geek, oferecendo uma curadoria especial de itens seminovos e raridades.</p>
+
+          <p><b>O que você encontra aqui:</b></p>
+
+          <ul>
+            <li><b>Leitura:</b> Livros usados de todos os gêneros.</li>
+            <li><b>Quadrinhos:</b> Mangás, HQs e gibis clássicos.</li>
+            <li><b>Mídias Físicas:</b> CDs, DVDs e discos de vinil para amantes da música e do cinema.</li>
+            <li><b>Colecionáveis:</b> Action figures, brinquedos e itens de decoração retrô.</li>
+          </ul>
+
+          <p>Seja visitando nossa loja física em Campinas ou navegando no nosso site com entrega para todo o Brasil, nossa missão é conectar você a grandes histórias e memórias inesquecíveis.</p>
+
+          <p><b>Garimpe nosso acervo e encontre seu próximo achado!</b></p>
         </section>
       </div>
 
