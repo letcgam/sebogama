@@ -1,16 +1,17 @@
-const links = [
+const redesSociais = [
   {
     label: "WhatsApp",
     href: "https://wa.me/551932827379",
-    description: "Converse direto com o Sebo Gama e peça indicações.",
     logo: "whatsApp.png",
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/sebogama",
-    description: "Siga o sebo para novidades e cliques de livros.",
-    logo: "instagram.jpeg",
+    logo: "instagram.png",
   },
+]
+
+const links = [
   {
     label: "Mercado Livre 1",
     href: "https://lista.mercadolivre.com.br/_CustId_10589566",
@@ -47,12 +48,12 @@ const links = [
     description: "Segunda loja com lançamentos e acervo selecionado.",
     logo: "shopee.jpeg",
   },
-  {
-    label: "Endereço",
-    href: "https://maps.app.goo.gl/bUQE4MPMyXaajv2h8?g_st=ac",
-    description: "R. Dom Humberto Mazzoni, 56 - Campinas, SP.",
-    logo: "google_maps.jpeg",
-  },
+  // {
+  //   label: "Endereço",
+  //   href: "https://maps.app.goo.gl/bUQE4MPMyXaajv2h8?g_st=ac",
+  //   description: "R. Dom Humberto Mazzoni, 56 - Campinas, SP.",
+  //   logo: "google_maps.jpeg",
+  // },
 ];
 
 function Logo() {
@@ -79,15 +80,25 @@ function App() {
       </div>
 
       <div className="card">
-        <section id="contatos">
+        <div className="card-header">
           <h2>Contatos</h2>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur optio dignissimos minus totam eveniet quod! Consectetur a ad et vero accusamus, repudiandae quis beatae in voluptates! Dolorum ipsa doloribus molestias.
+        </div>
+        <section className="card-body " id="contatos">
+          <div id="links-redes-sociais">
+          {redesSociais.map((link) => (
+            <a key={link.label} href={link.href} className="link-contato" target="_blank" rel="noreferrer noopener">
+              <img src={`public/assets/img/tp_logos/${link.logo}`} alt={`Logotipo de ${link.label}`}/>
+            </a>
+          ))}
+          </div>
         </section>
       </div>
 
       <div className="card">
-        <section className="links-grid" aria-label="Links principais do Sebo Gama">
+        <div className="card-header">
           <h2>Nosso acervo</h2>
+        </div>
+        <section className="card-body links-grid" aria-label="Links principais do Sebo Gama">
           {links.map((link) => (
             <a key={link.label} href={link.href} className="link-card" target="_blank" rel="noreferrer noopener">
               <span className="link-logo" aria-hidden="true">
@@ -103,9 +114,11 @@ function App() {
       </div>
 
       <div className="card">
-        <section className="about-section">
-          <div className="about-content">
-            <h2>Sobre o Sebo Gama</h2>
+        <div className="card-header">
+          <h2>Sobre o Sebo Gama</h2>
+        </div>
+        <section className="card-body">
+          <div>
             <p>
               Sebo Gama une o velho e o novo em Campinas: uma vitrine digital
               com o aconchego de um sebo, atendimento direto e ofertas em
