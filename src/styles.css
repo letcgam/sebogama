@@ -135,38 +135,41 @@ img#header-logo {
 
 #links-redes-sociais {
     display: flex;
-    gap: 8px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .link-contato {
-    border-radius: 50%;
-    background-color: #fff;
-    margin: 0 8px;
-    overflow: hidden;
-    width: 60px;
-    height: 60px;
+    flex: 1 1 220px;
     display: flex;
+    gap: 12px;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    border: var(--border);
+    padding: 10px;
+    border-radius: 100px;
+    background: var(--bg);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.link-contato:hover {
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transform: scale(1.04) translateY(-2px);
 }
 
 .link-contato img {
+    border-radius: 50%;
     width: 60px;
     height: 60px;
-    padding: 10px;
     object-fit: contain;
+    border: var(--border)
 }
 
 .links-grid {
     display: grid;
     gap: 16px;
     margin-bottom: 32px;
-}
-
-.link-contato,
-.link-card {
-    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
-    border: var(--border-muted);
 }
 
 .link-card {
@@ -178,12 +181,12 @@ img#header-logo {
     border-radius: 24px;
     background: var(--surface);
     border: var(--border-muted);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-.link-contato:hover,
 .link-card:hover,
 .link-card:focus-visible {
-    transform: scale(1.04) translateY(-2px);
+    transform: scale(1.02) translateY(-2px);
     border: var(--border-emphasis);
     box-shadow: var(--shadow);
 }

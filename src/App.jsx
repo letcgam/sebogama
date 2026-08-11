@@ -2,12 +2,16 @@ const redesSociais = [
   {
     label: "WhatsApp",
     href: "https://wa.me/551932827379",
-    logo: "whatsApp.png",
+    logo: "whatsapp.png",
+    description: "Enviar mensagem",
+    contato: "(19) 3282-7379",
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/sebogama",
     logo: "instagram.png",
+    description: "Acessar perfil",
+    contato: "@sebogama",
   },
 ]
 
@@ -87,6 +91,10 @@ function App() {
           {redesSociais.map((link) => (
             <a key={link.label} href={link.href} className="link-contato" target="_blank" rel="noreferrer noopener">
               <img src={`public/assets/img/tp_logos/${link.logo}`} alt={`Logotipo de ${link.label}`}/>
+              <div>
+                <span className="link-label">{link.contato}</span>
+                <span className="link-description">{link.description}</span>
+              </div>
             </a>
           ))}
           </div>
