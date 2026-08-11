@@ -60,22 +60,11 @@ const links = [
   // },
 ];
 
-function Logo() {
-  return (
-    <div className="logo-block logo-official" aria-label="Logo oficial Sebo Gama">
-      <img src="/assets/img/logo/icon.png" alt="Logo Sebo Gama" id="header-logo" />
-      <div className="logo-copy">
-        <span className="text-emphasis">sebo</span>gama
-      </div>
-    </div>
-  );
-}
-
 function App() {
   return (
     <div id="main-content">
       <header>
-        <Logo />
+        <img src="/assets/img/logo/logo_square.png" alt="Logo oficial do Sebo Gama" id="header-logo" />
       </header>
 
       <div className="card">
