@@ -93,6 +93,17 @@ const links = [
   },
 ];
 
+const palavrasSlide = [
+  "Livro",
+  "Gibi",
+  "CD",
+  "DVD",
+  "Disco de vinil",
+  "Action figure",
+  "Mangá",
+  "Álbum",
+]
+
 function ImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [shuffledFotos] = useState(() => {
@@ -185,13 +196,21 @@ function App() {
         />
       </header>
 
-      <div className="card">Acervo de produtos culturais.</div>
+      <div className="card" id="card-callout">
+        <section className="card-body">
+          <h3>Encontre aqui seu novo</h3>
+          <div className="text-slider">
+            {palavrasSlide.map((palavra, i) => <span className="roating-text" key={ i }>{ palavra }</span>)}
+          </div>
+          <h3>favorito.</h3>
+        </section>
+      </div>
 
       <div className="card">
         <div className="card-header">
           <h2>Contatos</h2>
         </div>
-        <section className="card-body " id="contatos">
+        <section className="card-body" id="contatos">
           <div id="links-redes-sociais">
             {redesSociais.map((link) => (
               <a
