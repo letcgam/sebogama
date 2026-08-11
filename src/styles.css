@@ -78,7 +78,7 @@ a {
 }
 
 .card-body {
-    padding: 36px;
+    padding: 24px;
 }
 
 header {
@@ -183,6 +183,55 @@ img#header-logo {
     line-height: 1.6;
 }
 
+#section-mapa a {
+    position: relative;
+    width: max-content;
+}
+
+#mapa-overlay {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#iframe_mapa_endereco {
+    width: 100%;
+    aspect-ratio: 2/1;
+    min-height: 200px;
+    max-height: 350px;
+    border: var(--border);
+    border-radius: 16px;
+    user-select: none;
+}
+
+#endereco-copy {
+    position: relative;
+    padding: 8px 16px;
+    background-color: var(--bg);
+    margin-left: 4px;
+    border-radius: 0 3em 3em 0;
+    transition: background-color 0.1s ease;
+}
+
+#section-mapa a:hover #endereco-copy {
+    background-color: var(--surface);
+}
+
+#endereco-copy::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4px;
+    border-radius: 4px;
+    content: "";
+    height: 100%;
+    width: 8px;
+    background-color: var(--accent);
+}
+
 .footer-note {
     background: var(--surface);
     padding: 1em;
@@ -212,7 +261,7 @@ img#header-logo {
         padding: 6px 20px;
     }
     .card-body {
-        padding: 28px 12px;
+        padding: 12px;
     }
 
     .link-card {
@@ -222,6 +271,6 @@ img#header-logo {
 
 @media (max-width: 520px) {
     .link-card {
-        padding: 20px;
+        padding: 12px;
     }
 }
