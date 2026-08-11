@@ -73,14 +73,18 @@ a {
     background: var(--bg);
     box-shadow: var(--shadow);
     backdrop-filter: blur(10px);
-    margin-top: 1em;
+    margin-top: 3em;
     overflow: hidden;
 }
 
 .card-header {
-    padding: 12px 36px;
     background: var(--bg);
     border-bottom: var(--border);
+}
+
+.card-header h2 {
+    padding: 12px 0 6px;
+    margin: 0;
 }
 
 .card-body {
@@ -269,15 +273,11 @@ img#header-logo {
     .card-body {
         padding: 12px;
     }
-
-    .link-card {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 520px) {
     .link-card {
-        padding: 12px;
+        padding: 6px 12px;
     }
 }
 
