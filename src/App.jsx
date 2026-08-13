@@ -349,10 +349,13 @@ function App() {
       </div>
 
       <footer className="footer-note">
+        <p><b>sebo<span className="text-emphasis">gama</span></b></p>
+        <hr />
         <p>
           Feito para leitores, colecionadores e apreciadores de histórias bem
           guardadas.
         </p>
+        <p style={{ opacity: 0.5 }}><small>© 2026 Sebo Gama. Todos os direitos reservados.</small></p>
         <img
           src="/assets/img/logo/icon.png"
           alt="Logo Sebo Gama"
