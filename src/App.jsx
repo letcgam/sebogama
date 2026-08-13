@@ -162,7 +162,7 @@ function ImageCarousel() {
         onTouchEnd={handleTouchEnd}
       >
         <img
-          src={"/assets/img/fotos_loja/" + shuffledFotos[currentIndex]}
+          src={"/assets/img/fotos_loja_otm/" + shuffledFotos[currentIndex]}
           alt={`Foto do Sebo Gama ${currentIndex + 1}`}
           className="carousel-image"
         />
