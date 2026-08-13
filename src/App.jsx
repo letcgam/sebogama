@@ -334,12 +334,39 @@ function App() {
 
           <p><b>O que você encontra aqui:</b></p>
 
-          <ul>
-            <li><b>Leitura:</b> Livros usados de todos os gêneros.</li>
-            <li><b>Quadrinhos:</b> Mangás, HQs e gibis clássicos.</li>
-            <li><b>Mídias Físicas:</b> CDs, DVDs e discos de vinil para amantes da música e do cinema.</li>
-            <li><b>Colecionáveis:</b> Action figures, brinquedos e itens de decoração retrô.</li>
-          </ul>
+          <div id="grid-itens-loja">
+            <div className="card-item-loja">
+              <div className="card-item-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="currentColor"><path d="M300-80q-58 0-99-41t-41-99v-520q0-58 41-99t99-41h500v600q-25 0-42.5 17.5T740-220q0 25 17.5 42.5T800-160v80H300Zm-60-267q14-7 29-10t31-3h20v-440h-20q-25 0-42.5 17.5T240-740v393Zm160-13h320v-440H400v440Zm-160 13v-453 453Zm60 187h373q-6-14-9.5-28.5T660-220q0-16 3-31t10-29H300q-26 0-43 17.5T240-220q0 26 17 43t43 17Z"/></svg>
+                <b>Livros</b>
+              </div>
+              <p className="card-item-descricao">Livros usados de todos os gêneros.</p>
+            </div>
+
+            <div className="card-item-loja">
+              <div className="card-item-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="currentColor"><path d="M480-160q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740v484q51-32 107-48t113-16q36 0 70.5 6t69.5 18v-480q15 5 29.5 10.5T898-752q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59Zm80-200v-380l200-200v400L560-360Zm-160 65v-396q-33-14-68.5-21.5T260-720q-37 0-72 7t-68 21v397q35-13 69.5-19t70.5-6q36 0 70.5 6t69.5 19Zm0 0v-396 396Z"/></svg>
+                <b>Quadrinhos</b>
+              </div>
+              <p className="card-item-descricao">Mangás, HQs e gibis clássicos.</p>
+            </div>
+
+            <div className="card-item-loja">
+              <div className="card-item-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="currentColor"><path d="M280-120v-80h160v-124q-49-11-87.5-41.5T296-442q-75-9-125.5-65.5T120-640v-40q0-33 23.5-56.5T200-760h80v-80h400v80h80q33 0 56.5 23.5T840-680v40q0 76-50.5 132.5T664-442q-18 46-56.5 76.5T520-324v124h160v80H280Zm0-408v-152h-80v40q0 38 22 68.5t58 43.5Zm285 93q35-35 35-85v-240H360v240q0 50 35 85t85 35q50 0 85-35Zm115-93q36-13 58-43.5t22-68.5v-40h-80v152Zm-200-52Z"/></svg>
+                <b>Colecionáveis</b>
+              </div>
+              <p className="card-item-descricao">Action figures, brinquedos e itens de decoração retrô.</p>
+            </div>
+
+            <div className="card-item-loja">
+              <div className="card-item-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="currentColor"><path d="M480-300q75 0 127.5-52.5T660-480q0-75-52.5-127.5T480-660q-75 0-127.5 52.5T300-480q0 75 52.5 127.5T480-300Zm-28.5-151.5Q440-463 440-480t11.5-28.5Q463-520 480-520t28.5 11.5Q520-497 520-480t-11.5 28.5Q497-440 480-440t-28.5-11.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                <b>Mídias Físicas</b>
+              </div>
+              <p className="card-item-descricao">CDs, DVDs e discos de vinil para amantes da música e do cinema.</p>
+            </div>
+          </div>
         </section>
       </div>
 
