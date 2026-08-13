@@ -118,8 +118,12 @@ a {
 }
 
 .card-header {
-    background: var(--bg);
+    color: var(--surface);
+}
+
+.card .card-header {
     border-bottom: var(--border);
+    background: var(--bg);
     padding: 12px 18px 6px;
 }
 
@@ -259,20 +263,20 @@ img#header-logo {
 
 #links-redes-sociais {
     display: flex;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .link-contato {
-    flex: 1 1 220px;
     display: flex;
+    flex: 1 0 220px;
     gap: 12px;
     align-items: center;
     justify-content: start;
     border: var(--border);
-    padding: 10px;
+    padding: 6px 20px 6px 6px;
     border-radius: 100px;
-    background: var(--bg);
+    background: var(--surface);
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
@@ -280,12 +284,13 @@ img#header-logo {
     background: var(--surface);
     box-shadow: var(--shadow);
     transform: scale(1.04) translateY(-2px);
+    z-index: 2;
 }
 
 .link-contato img {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
     border: var(--border)
 }

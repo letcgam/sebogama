@@ -6,14 +6,12 @@ const redesSociais = [
     href: "https://wa.me/551932827379",
     logo: "whatsapp.png",
     description: "Enviar mensagem",
-    contato: "(19) 3282-7379",
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/sebogama",
     logo: "instagram.png",
-    description: "Acessar perfil",
-    contato: "@sebogama",
+    description: "@sebogama",
   },
 ];
 
@@ -217,65 +215,58 @@ function App() {
         </section>
       </div>
 
-      <div className="card">
-        <div className="card-header">
-          <h2>Contatos</h2>
-        </div>
-        <section className="card-body" id="contatos">
-          <div id="links-redes-sociais">
-            {redesSociais.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="link-contato"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  src={`/assets/img/tp_logos/${link.logo}`}
-                  alt={`Logotipo de ${link.label}`}
-                />
-                <div>
-                  <span className="link-label">{link.contato}</span>
-                  <span className="link-description">{link.description}</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-      </div>
-
-      <div className="card">
-        <div className="card-header">
-          <h2>Nosso acervo</h2>
-        </div>
-        <section
-          className="card-body links-grid"
-          aria-label="Links principais do Sebo Gama"
-        >
-          {links.map((link) => (
+      <section className="card-body" id="contatos">
+        <div id="links-redes-sociais">
+          {redesSociais.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="link-card"
+              className="link-contato"
               target="_blank"
               rel="noreferrer noopener"
             >
-              <span className="link-logo" aria-hidden="true">
-                <img
-                  className="logo-img"
-                  src={`/assets/img/tp_logos/${link.logo}`}
-                  alt={`Logotipo de ${link.label}`}
-                />
-              </span>
+              <img
+                src={`/assets/img/tp_logos/${link.logo}`}
+                alt={`Logotipo de ${link.label}`}
+              />
               <div>
                 <span className="link-label">{link.label}</span>
-                <span className="link-description">{link.description}</span>
+                <small className="link-description">{link.description}</small>
               </div>
             </a>
           ))}
-        </section>
+        </div>
+      </section>
+
+      <div className="card-header">
+        <h2>Nosso acervo</h2>
       </div>
+      <section
+        className="card-body links-grid"
+        aria-label="Links principais do Sebo Gama"
+      >
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className="link-card"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span className="link-logo" aria-hidden="true">
+              <img
+                className="logo-img"
+                src={`/assets/img/tp_logos/${link.logo}`}
+                alt={`Logotipo de ${link.label}`}
+              />
+            </span>
+            <div>
+              <span className="link-label">{link.label}</span>
+              <span className="link-description">{link.description}</span>
+            </div>
+          </a>
+        ))}
+      </section>
 
       <div className="card">
         <div className="card-header">
