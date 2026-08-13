@@ -3,11 +3,13 @@
 :root {
     color-scheme: dark;
     --bg: #f3f0ee88;
+    --bg-dark: #14141488;
     --surface: #f3f0ee;
     --text: #0b0b0b;
     --muted: #4b4b4b;
     --accent: #cc1717;
     --accent-soft: #cf5a5a;
+    --accent-bg: #f3bcbcd2;
     --border: 1px solid #f0f0f0;
     --border-muted: 3px solid transparent;
     --border-emphasis: 3px solid #ececec;
@@ -62,6 +64,43 @@ body::selection {
     }
 }
 
+h1#header-title,
+#header-description {
+    color: var(--surface);
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-family: "DM Serif Display", serif;
+}
+
+h1#header-title .text-emphasis {
+    color: #f24848;
+}
+
+#header-description {
+    color: var(--surface);
+    text-align: center;
+    width: max-content;
+}
+
+header hr {
+    border-bottom: 1px solid var(--bg);
+    margin: 1em;
+}
+
+.tag.tag-accent {
+    background-color: var(--accent-bg);
+    color: var(--accent);
+    border-radius: 1em;
+    padding: 2px 8px;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    font-size: small;
+    font-weight: 500;
+    margin: 4px auto;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -102,7 +141,7 @@ img#header-logo {
     object-fit: contain;
     width: max(50px, 30%);
     max-width: 220px;
-    margin: 1em auto;
+    margin: 1em auto 0;
     aspect-ratio: 1/1;
     border-radius: 50%;
     border: 5px solid #fff;
@@ -127,15 +166,20 @@ img#header-logo {
     border: none;
     text-align: center;
     margin-top: 1em;
+    color: var(--surface);
 }
 
 #card-callout h3 {
     margin: 0;
+    font-weight: 500;
 }
 
 .text-slider {
     position: relative;
-    height: 40px;
+    height: 36px;
+    color: var(--surface);
+    background-color: var(--bg-dark);
+    border-radius: 2em;
 }
 
 .roating-text {
@@ -144,11 +188,10 @@ img#header-logo {
     left: 0;
     opacity: 0;
     animation: mudarFrase 24s infinite;
-    font-size: 36px;
-    height: 40px;
+    font-size: 26px;
+    height: 36px;
     line-height: 1;
     font-weight: bold;
-    color: var(--accent);
     display: flex;
     justify-content: center;
     align-items: center;
