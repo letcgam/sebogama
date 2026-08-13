@@ -238,7 +238,8 @@ function App() {
         </div>
       </section>
 
-      <div className="card-header">
+      <div className="card-header" style={{ display: "flex", alignItems: "center", gap: "4px", marginTop: "1em" }}>
+        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e3e3e3"><path d="M270-80q-45 0-77.5-30.5T160-186v-558q0-38 23.5-68t61.5-38l395-78v640l-379 76q-9 2-15 9.5t-6 16.5q0 11 9 18.5t21 7.5h450v-640h80v720H270Zm90-233 200-39v-478l-200 39v478Zm-80 16v-478l-15 3q-11 2-18 9.5t-7 18.5v457q5-2 10.5-3.5T261-293l19-4Zm-40-472v482-482Z"/></svg>
         <h2>Nosso acervo</h2>
       </div>
       <section
@@ -269,18 +270,43 @@ function App() {
       </section>
 
       <div className="card">
-        <div className="card-header">
+        <div className="card-header" style={{ display: "flex" }}>
+          <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="currentColor"><path d="M360-440h80v-110h80v110h80v-190l-120-80-120 80v190Zm120 254q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg>
           <h2>Onde estamos</h2>
         </div>
         <section className="card-body" id="section-mapa">
-          <a href="https://maps.app.goo.gl/qb3YcpBvqprnsgnr7" target="_blank">
             <p id="endereco-copy">
-              <b>R. Dom Humberto Mazzoni, 56 - Lj 12</b>
+              <h3 style={{ margin: 0 }}>
+                <b style={{ fontFamily: 'DM Serif Display, serif' }}>Galeria Rocha</b>
+              </h3>
+              <b>R. Dom Humberto Mazzoni, 56 - Loja 12</b>
               <br />
-              Conj. Res. Padre Anchieta, Campinas - SP, 13068-323
+              <small>Conj. Res. Padre Anchieta, Campinas - SP</small>
+              <br />
+              <small>CEP: 13068-323</small>
             </p>
 
-            <div id="mapa-overlay"></div>
+            <table id="table-horario">
+              <thead>
+                <tr>
+                  <th>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                    <b>Horário de Atendimento</b>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Segunda a Sexta</td>
+                  <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Sábado</td>
+                  <td>09:00 - 13:00</td>
+                </tr>
+              </tbody>
+            </table>
+
             <iframe
               title="Mapa para Sebo Gama"
               id="iframe_mapa_endereco"
@@ -293,7 +319,6 @@ function App() {
               aria-hidden="true"
               tabindex="-1"
             ></iframe>
-          </a>
         </section>
       </div>
 

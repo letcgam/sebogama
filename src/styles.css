@@ -108,12 +108,11 @@ a {
 
 .card {
     width: min(820px, 95%);
-    border: var(--border);
     border-radius: 36px;
-    background: var(--bg);
+    background: var(--surface);
     box-shadow: var(--shadow);
     backdrop-filter: blur(5px);
-    margin-top: 3em;
+    margin-bottom: 2em;
     overflow: hidden;
 }
 
@@ -122,9 +121,10 @@ a {
 }
 
 .card .card-header {
-    border-bottom: var(--border);
-    background: var(--bg);
-    padding: 12px 18px 6px;
+    color: var(--text);
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0 6px;
+    margin: 0 1em;
 }
 
 .card-header h2 {
@@ -132,7 +132,7 @@ a {
 }
 
 .card-body {
-    padding: 24px;
+    padding: 12px 24px 24px;
 }
 
 header {
@@ -273,7 +273,6 @@ img#header-logo {
     gap: 12px;
     align-items: center;
     justify-content: start;
-    border: var(--border);
     padding: 6px 20px 6px 6px;
     border-radius: 100px;
     background: var(--surface);
@@ -333,18 +332,27 @@ img#header-logo {
     line-height: 1.6;
 }
 
+#table-horario {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid var(--accent-bg);
+    margin: 16px 0;
+}
+
+#table-horario th {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+#table-horario td {
+    padding: 0 8px 8px;
+}
+
 #section-mapa a {
     position: relative;
     width: max-content;
-}
-
-#mapa-overlay {
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
 }
 
 #iframe_mapa_endereco {
@@ -352,7 +360,7 @@ img#header-logo {
     aspect-ratio: 2/1;
     min-height: 200px;
     max-height: 350px;
-    border: var(--border);
+    border: 3px solid #bad1eb;
     border-radius: 16px;
     user-select: none;
 }
@@ -364,10 +372,6 @@ img#header-logo {
     margin-left: 4px;
     border-radius: 0 3em 3em 0;
     transition: background-color 0.1s ease;
-}
-
-#section-mapa a:hover #endereco-copy {
-    background-color: var(--surface);
 }
 
 #endereco-copy::before {
@@ -414,7 +418,7 @@ img#header-logo {
         font-size: 1.3em;
     }
     .card-body {
-        padding: 12px;
+        padding: 10px 16px 16px;
     }
 }
 
