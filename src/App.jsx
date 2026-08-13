@@ -184,6 +184,39 @@ function ImageCarousel() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Se a página já carregou, desativa o loading imediatamente
+    if (document.readyState === 'complete') {
+      setIsLoading(false);
+      return;
+    }
+
+    // Caso contrário, aguarda o evento load
+    const handleLoadComplete = () => {
+      setIsLoading(false);
+    };
+
+    window.addEventListener('load', handleLoadComplete);
+    return () => window.removeEventListener('load', handleLoadComplete);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-content">
+          <img
+            src="/assets/img/logo/logo_square.png"
+            alt="Sebo Gama"
+            className="loading-logo"
+          />
+          <p className="loading-text">Carregando...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="main-content">
       <header>
