@@ -322,11 +322,11 @@ function App() {
         </section>
       </div>
 
-      <div className="card-header" style={{ display: "flex", alignItems: "center", gap: "4px", marginTop: "1em" }}>
-        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e3e3e3"><path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/></svg>
-        <h2>Sobre o Sebo Gama</h2>
-      </div>
       <div className="card">
+        <div className="card-header" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="currentColor"><path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/></svg>
+          <h2>Sobre o Sebo Gama</h2>
+        </div>
         <section className="card-body">
           <h3 style={{ margin: "8px 0" }}>Tradição, Leitura e Cultura Pop</h3>
 
@@ -368,9 +368,7 @@ function App() {
             </div>
           </div>
         </section>
-      </div>
 
-      <div className="card">
         <div className="card-header" style={{ display: "flex", gap: "8px" }}>
           <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="currentColor"><path d="M480-260q75 0 127.5-52.5T660-440q0-75-52.5-127.5T480-620q-75 0-127.5 52.5T300-440q0 75 52.5 127.5T480-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM160-120q-33 0-56.5-23.5T80-200v-480q0-33 23.5-56.5T160-760h126l74-80h240l74 80h126q33 0 56.5 23.5T880-680v480q0 33-23.5 56.5T800-120H160Zm0-80h640v-480H638l-73-80H395l-73 80H160v480Zm320-240Z"/></svg>
           <h2>Conheça a loja física</h2>
