@@ -28,11 +28,15 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log
+
 # temporary files
 *.tmp
 *.temp
 
 # lock files
-package-lock.json
 pnpm-lock.yaml
 yarn.lock
