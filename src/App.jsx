@@ -221,7 +221,7 @@ function App() {
                 rel="noreferrer noopener"
               >
                 <img
-                  src={`public/assets/img/tp_logos/${link.logo}`}
+                  src={`/assets/img/tp_logos/${link.logo}`}
                   alt={`Logotipo de ${link.label}`}
                 />
                 <div>
@@ -253,7 +253,7 @@ function App() {
               <span className="link-logo" aria-hidden="true">
                 <img
                   className="logo-img"
-                  src={`public/assets/img/tp_logos/${link.logo}`}
+                  src={`/assets/img/tp_logos/${link.logo}`}
                   alt={`Logotipo de ${link.label}`}
                 />
               </span>
