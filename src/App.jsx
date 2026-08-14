@@ -165,6 +165,7 @@ function ImageCarousel() {
           src={"/assets/img/fotos_loja_otm/" + shuffledFotos[currentIndex]}
           alt={`Foto do Sebo Gama ${currentIndex + 1}`}
           className="carousel-image"
+          loading="lazy"
         />
         <div className="carousel-caption">Fotos do sebo</div>
       </div>
@@ -203,6 +204,7 @@ function App() {
     window.addEventListener('load', handleLoadComplete);
     return () => window.removeEventListener('load', handleLoadComplete);
   }, []);
+
 
   if (isLoading) {
     return (
@@ -263,6 +265,7 @@ function App() {
               <img
                 src={`/assets/img/tp_logos/${link.logo}`}
                 alt={`Logotipo de ${link.label}`}
+                loading="lazy"
               />
               <div>
                 <span className="link-label">{link.label}</span>
@@ -294,6 +297,7 @@ function App() {
                 className="logo-img"
                 src={`/assets/img/tp_logos/${link.logo}`}
                 alt={`Logotipo de ${link.label}`}
+                loading="lazy"
               />
             </span>
             <div>
@@ -425,6 +429,7 @@ function App() {
           src="/assets/img/logo/icon.png"
           alt="Logo Sebo Gama"
           id="footer-logo"
+          loading="lazy"
         />
       </footer>
     </div>
