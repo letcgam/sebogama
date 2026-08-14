@@ -195,7 +195,9 @@ function App() {
 
     // Caso contrário, aguarda o evento load
     const handleLoadComplete = () => {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
     };
 
     window.addEventListener('load', handleLoadComplete);
