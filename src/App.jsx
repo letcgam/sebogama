@@ -116,12 +116,15 @@ function ImageCarousel() {
   const touchEndX = useRef(null);
   const IMG_BASE = "/assets/img/fotos_loja_otm/";
 
-  // Pré-carrega a próxima imagem para evitar "flash" ao trocar de slide
+  // Pré-carrega TODAS as imagens imediatamente na montagem,
+  // para que o carrossel não dependa do loading="lazy" (que só
+  // carrega quando entra na viewport, atrasando o carregamento)
   useEffect(() => {
-    const nextIndex = (currentIndex + 1) % shuffledFotos.length;
-    const img = new Image();
-    img.src = IMG_BASE + shuffledFotos[nextIndex];
-  }, [currentIndex, shuffledFotos]);
+    shuffledFotos.forEach((foto) => {
+      const img = new Image();
+      img.src = IMG_BASE + foto;
+    });
+  }, [shuffledFotos]);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -173,7 +176,6 @@ function ImageCarousel() {
           src={IMG_BASE + shuffledFotos[currentIndex]}
           alt={`Foto do Sebo Gama ${currentIndex + 1}`}
           className="carousel-image"
-          loading="lazy"
           decoding="async"
         />
         <div className="carousel-caption">Fotos do sebo</div>
