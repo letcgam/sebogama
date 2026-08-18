@@ -116,9 +116,9 @@ function ImageCarousel() {
   const touchEndX = useRef(null);
   const IMG_BASE = "/assets/img/fotos_loja_otm/";
 
-  // Pré-carrega TODAS as imagens imediatamente na montagem,
-  // para que o carrossel não dependa do loading="lazy" (que só
-  // carrega quando entra na viewport, atrasando o carregamento)
+  // Pré-carrega TODAS as imagens imediatamente na montagem.
+  // Como todas ficam renderizadas no DOM de uma vez, a troca
+  // entre slides é apenas uma mudança de CSS (opacity), instantânea.
   useEffect(() => {
     shuffledFotos.forEach((foto) => {
       const img = new Image();
@@ -172,12 +172,15 @@ function ImageCarousel() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <img
-          src={IMG_BASE + shuffledFotos[currentIndex]}
-          alt={`Foto do Sebo Gama ${currentIndex + 1}`}
-          className="carousel-image"
-          decoding="async"
-        />
+        {shuffledFotos.map((foto, index) => (
+          <img
+            key={foto}
+            src={IMG_BASE + foto}
+            alt={`Foto do Sebo Gama ${index + 1}`}
+            className={`carousel-image${index === currentIndex ? " carousel-image-active" : ""}`}
+            decoding="async"
+          />
+        ))}
         <div className="carousel-caption">Fotos do sebo</div>
       </div>
       <div className="carousel-controls">
