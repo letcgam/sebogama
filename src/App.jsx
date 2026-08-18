@@ -114,6 +114,7 @@ function ImageCarousel() {
   });
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
+  const timerRef = useRef(null);
   const IMG_BASE = "/assets/img/fotos_loja_otm/";
 
   // Pré-carrega TODAS as imagens imediatamente na montagem.
@@ -126,20 +127,35 @@ function ImageCarousel() {
     });
   }, [shuffledFotos]);
 
-  useEffect(() => {
-    const interval = window.setInterval(() => {
+  // Avança automaticamente com setTimeout (não setInterval),
+  // para que o timer possa ser resetado a cada navegação manual.
+  const scheduleNext = () => {
+    if (timerRef.current) window.clearTimeout(timerRef.current);
+    timerRef.current = window.setTimeout(() => {
       setCurrentIndex((currentIndex) => (currentIndex + 1) % shuffledFotos.length);
     }, 4500);
+  };
 
-    return () => window.clearInterval(interval);
-  }, [shuffledFotos.length]);
+  useEffect(() => {
+    scheduleNext();
+    return () => {
+      if (timerRef.current) window.clearTimeout(timerRef.current);
+    };
+  }, [currentIndex, shuffledFotos.length]);
+
+  const goToSlide = (newIndex) => {
+    setCurrentIndex(newIndex);
+    // Resetar o timer: a próxima troca automática só ocorre
+    // 4.5s após a navegação manual.
+    scheduleNext();
+  };
 
   const prevSlide = () => {
-    setCurrentIndex((currentIndex) => (currentIndex + shuffledFotos.length - 1) % shuffledFotos.length);
+    goToSlide((currentIndex + shuffledFotos.length - 1) % shuffledFotos.length);
   };
 
   const nextSlide = () => {
-    setCurrentIndex((currentIndex) => (currentIndex + 1) % shuffledFotos.length);
+    goToSlide((currentIndex + 1) % shuffledFotos.length);
   };
 
   const handleTouchStart = (event) => {
