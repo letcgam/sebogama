@@ -114,6 +114,14 @@ function ImageCarousel() {
   });
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
+  const IMG_BASE = "/assets/img/fotos_loja_otm/";
+
+  // Pré-carrega a próxima imagem para evitar "flash" ao trocar de slide
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % shuffledFotos.length;
+    const img = new Image();
+    img.src = IMG_BASE + shuffledFotos[nextIndex];
+  }, [currentIndex, shuffledFotos]);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -162,10 +170,11 @@ function ImageCarousel() {
         onTouchEnd={handleTouchEnd}
       >
         <img
-          src={"/assets/img/fotos_loja_otm/" + shuffledFotos[currentIndex]}
+          src={IMG_BASE + shuffledFotos[currentIndex]}
           alt={`Foto do Sebo Gama ${currentIndex + 1}`}
           className="carousel-image"
           loading="lazy"
+          decoding="async"
         />
         <div className="carousel-caption">Fotos do sebo</div>
       </div>
@@ -194,11 +203,9 @@ function App() {
       return;
     }
 
-    // Caso contrário, aguarda o evento load
+    // Aguarda o evento load sem atraso artificial extra
     const handleLoadComplete = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
+      setIsLoading(false);
     };
 
     window.addEventListener('load', handleLoadComplete);

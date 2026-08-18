@@ -17,6 +17,22 @@
     <link rel="mask-icon" href="/assets/img/favicon/favicon.svg" color="#ffffff" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/assets/img/favicon/web-app-manifest-192x192.png" />
+
+    <!-- Preconnect para recursos externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+
+    <!-- Google Fonts com display=swap (não bloqueia renderização) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Pré-carregamento de recursos críticos -->
+    <link rel="preload" as="image" href="/assets/img/logo/logo_square.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/img/fotos_loja_otm/h_DSC1517.jpg" fetchpriority="high" />
 </head>
 
 <body>
