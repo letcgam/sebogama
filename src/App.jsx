@@ -216,6 +216,7 @@ function ImageCarousel() {
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isBackgroundLoaded, setIsBackgroundLoaded] = useState(false);
 
   useEffect(() => {
     // Se a página já carregou, desativa o loading imediatamente
@@ -251,6 +252,19 @@ function App() {
 
   return (
     <div id="main-content">
+      <picture className="main-content-background">
+        <source
+          media="(orientation: portrait)"
+          srcSet="/assets/img/fotos_loja/v_DSC1536.jpg"
+        />
+        <img
+          src="/assets/img/fotos_loja_otm/h_DSC1517.jpg"
+          alt=""
+          className={isBackgroundLoaded ? "main-content-background-image is-loaded" : "main-content-background-image"}
+          onLoad={() => setIsBackgroundLoaded(true)}
+          decoding="async"
+        />
+      </picture>
       <header>
         <img
           src="/assets/img/logo/logo_square.png"
