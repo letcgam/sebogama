@@ -637,3 +637,69 @@ img#header-logo {
         padding-bottom: 8px;
     }
 }
+
+.link-avaliacao-google {
+    height: 80px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 3em;
+    background-color: #176BEF;
+    color: #ffffff;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+section#avaliacao-google {
+    display: flex;
+    width: 100%;
+}
+
+/* Efeito ao passar o mouse */
+.link-avaliacao-google:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    background-color: #fff;
+    color: #176BEF;
+}
+
+.link-avaliacao-google:hover svg path {
+    fill: #FFAC33;
+}
+
+.link-avaliacao-google small {
+    opacity: 0.8;
+}
+
+.link-avaliacao-google img {
+    height: 80px;
+    width: 80px;
+    padding: 8px;
+    background-color: #fff;
+}
+
+.link-avaliacao-google .stars-container {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+}
+
+.link-avaliacao-google .stars-container svg {
+    height: 20px;
+    width: 20px;
+}
+
+.link-avaliacao-google .descricao-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
